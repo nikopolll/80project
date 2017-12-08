@@ -11,7 +11,7 @@ setInterval(function() {
  showDay();
 
  let showHour = function() {
-  hour.innerHTML = (timerr.getHours() + 1) + ":" + timerr.getMinutes() + ":" + timerr.getSeconds();
+  hour.innerHTML = (timerr.getHours() + 1) + ":" + ((timerr.getMinutes() < 10 ? '0' :'')+timerr.getMinutes()) + ":" + ((timerr.getSeconds() < 10 ? '0' : '') + timerr.getSeconds());
  };
  showHour();
-},1000)();
+}, 1000)();
