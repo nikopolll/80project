@@ -4,4 +4,4 @@
 ## Why and how
 * Solutions commited here are results of my work over exercises on w3resource.com/javascript-exercises.
   First I'm going to resolve 80 execises from basic category.
-* After each 10 execise prod branch will be merged with master branch.
+* After each 10 execise, prod branch will be merged with master branch.
