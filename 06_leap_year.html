@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Document</title>
+ <style media="screen">
+  * {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+  }
+
+  body {
+   display: grid;
+   grid-template-columns: 200px auto 200px;
+   grid-template-rows: auto 100px 100px;
+   font-family: sans-serif;
+  }
+
+  .opis {
+   grid-column-start: 2;
+   grid-column-end: 2;
+   grid-row-start: 1;
+   grid-row-end: 1;
+   padding: 10px;
+   align-self: flex-start;
+  }
+
+  .opis h1 {
+   margin-bottom: 10px;
+  }
+
+  #buton {
+   padding: 10px 30px;
+   background-color: red;
+   color: #fff;
+   font-size: 1.1em;
+   align-self: center;
+   justify-self: center;
+   text-align: center;
+   border: none;
+   margin: 10px;
+   box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.75);
+   transition: all 0.2s;
+  }
+
+  #buton:active {
+   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 1);
+  }
+
+  .wynik {
+   grid-column-start: 2;
+   grid-column-end: 2;
+   grid-row-start: 2;
+   grid-row-end: 3;
+   padding: 10px;
+   align-self: center;
+   justify-self: center;
+   text-align: center;
+  }
+
+  .wynik h2 {
+   text-align: left;
+  }
+
+  input {
+   padding: 10px;
+  }
+ </style>
+</head>
+
+<body>
+ <section class="opis">
+  <h1>Opis ćwiczenia</h1>
+  <p>Napisz program, który określi czy dany rok jest rokiem przestępnym w kalendarzu gregoriańskim.</p>
+  <input type="text" name="a" id="rok">
+  <button id="buton">DRUKUJ</button>
+ </section>
+ <section class="wynik">
+  <div id="sprawdzony"></div>
+ </section>
+
+ <script type="text/javascript">
+  (function() {
+   let button = document.getElementById('buton');
+   let sprawdzony = document.getElementById('sprawdzony');
+   button.addEventListener('click', test);
+
+   function test() {
+    let rok = parseInt(document.getElementById('rok').value);
+    if (isNaN(rok)) {
+     sprawdzony.innerHTML = "No, ale który rok mam sprawdzić?";
+    } else if ((rok % 4 == 0) && (rok % 100 !== 0) || (rok % 400 == 0)) {
+     sprawdzony.innerHTML = "Rok " + rok + " jest przestępny";
+    } else {
+     sprawdzony.innerHTML = "Rok " + rok + " nie jest przestępny";
+    }
+   };
+  })();
+ </script>
+</body>
+
+</html>
