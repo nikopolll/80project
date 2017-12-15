@@ -67,7 +67,7 @@
 
   #disply {
    font-size: 3em;
-   color: #06aabf;
+   color: #ffb800;
 
   }
  </style>
@@ -85,18 +85,7 @@
   <div id="tekst">&nbsp;Java&nbsp;Script&nbsp;</div>
   <div id="disply"></div>
  </section>
-
- <script type="text/javascript">
-  var anyString = document.getElementById("tekst").innerText;
-  setInterval(function(){
-  var disply = document.getElementById("disply");
-  var anyString1 = anyString.substring(anyString.length - 1);
-  var nowystring = anyString1 + anyString.substring(0, anyString.length-1);
-  anyString = nowystring;
-  disply.innerHTML= anyString;
- }, 50);
-
- </script>
+ <script src="05_rotator.js" charset="utf-8"></script>
 </body>
 
 </html>
