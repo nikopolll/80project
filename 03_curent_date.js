@@ -1,3 +1,4 @@
+(function(){
 let show = document.getElementById('data');
 let calendar = new Date();
 let data = {
@@ -16,3 +17,4 @@ let data = {
 };
 
 show.innerHTML = "Dzisiaj jest: " + data.day + data.spacer() + data.month + data.spacer() + data.year;
+})();
